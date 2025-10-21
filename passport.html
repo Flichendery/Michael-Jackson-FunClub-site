@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>DOM</title>
+        <style>
+    body {
+      font-size: 20px;
+    }
+    table {
+      border-collapse: collapse;
+      margin-top: 20px;
+      width: 100%;
+    }
+    td, th {
+      border: 1px solid #ccc;
+      padding: 10px;
+      vertical-align: top;
+    }
+    button {
+      margin-top: 15px;
+      padding: 8px 12px;
+      font-size: 18px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  </style>
+    </head>
+    <body>
+        <!-- Навигация -->
+        <nav name="main-nav" style="padding:10px;border-bottom:1px solid #ccc;">
+            <img src="Jackson-icon.png" alt="Logo"
+                style="height:30px; margin-right:15px;">
+            <a href="index.html" class="nav-link"
+                style="margin-right:12px;text-decoration:none;color:black;">Главная</a>
+            <a href="info2.html" class="nav-link"
+                style="margin-right:12px;text-decoration:none;color:black;">Обзор</a>
+            <a href="forms.html" class="nav-link"
+                style="margin-right:12px;text-decoration:none;color:black;">Регистрация</a>
+            <a href="passport.html" class="nav-link"
+                style="margin-right:12px;text-decoration:none;color:black;"><b>Паспорт</b></a>
+            <a href="task.html" class="nav-link"
+                style="margin-right:12px;text-decoration:none;color:black;">Задача</a>
+        </nav>
+
+        <h1>Паспорт Майкла Джексона</h1>
+
+        <table>
+            <tr>
+                <td rowspan="5">
+                    <img src="Jackson-portrait.jpg" style="width: 150px;"
+                        alt="Фотография Майкла Джексона">
+                </td>
+                <td>Фамилия: <span id="surname">Джексон</span></td>
+            </tr>
+            <tr>
+                <td>Имя: <span id="firstname">Майкл</span></td>
+            </tr>
+            <tr>
+                <td>Год рождения: <span id="year">1958</span></td>
+            </tr>
+            <tr>
+                <td>Место рождения: <span id="birth_place">Гари,
+                        Индиана</span></td>
+            </tr>
+            <tr>
+                <td>Гражданство: <span id="citizenship">США</span></td>
+            </tr>
+            <tr>
+                <td>Профессия: Певец</td>
+                <td>Фан-клуб: MJFans Russia</td>
+            </tr>
+        </table>
+
+        <button id="convertBtn">Изменить на латиницу</button>
+
+        <h2>Считываем информацию из DOM</h2>
+        <div>
+            <img src="DOM.png" style="width: 100%; max-width: 1200px;">
+        </div>
+
+        <script>
+    const firstname = document.getElementById('firstname').innerText;
+    const surname = document.getElementById('surname').innerText;
+    const year = document.getElementById('year').innerText;
+    const birth_place = document.getElementById('birth_place').innerText;
+    const citizenship = document.getElementById('citizenship').innerText;
+
+    document.getElementById('convertBtn').addEventListener('click', () => {
+      document.getElementById('surname').innerText = 'Jackson';
+      document.getElementById('firstname').innerText = 'Michael';
+      document.getElementById('birth_place').innerText = 'Gary, Indiana';
+      document.getElementById('citizenship').innerText = 'USA';
+    });
+  </script>
+    </body>
+</html>

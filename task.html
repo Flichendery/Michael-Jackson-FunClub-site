@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Треугольник — Проверка по сторонам</title>
+        <style>
+    body {
+      font-size: 20px;
+    }
+    table {
+      border-collapse: collapse;
+      margin-top: 20px;
+      width: 100%;
+    }
+    td, th {
+      border: 1px solid #ccc;
+      padding: 10px;
+      vertical-align: top;
+    }
+    input[type=number] {
+      width: 80px;
+      padding: 5px;
+      font-size: 18px;
+    }
+    button {
+      margin-top: 15px;
+      padding: 8px 12px;
+      font-size: 18px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+    </head>
+    <body>
+        <!-- Навигация -->
+        <nav name="main-nav" style="padding:10px;border-bottom:1px solid #ccc;">
+            <img src="Jackson-icon.png" alt="Logo"
+                style="height:30px; margin-right:15px;">
+            <a href="index.html" class="nav-link"
+                style="margin-right:12px;text-decoration:none;color:black;">Главная</a>
+            <a href="info2.html" class="nav-link"
+                style="margin-right:12px;text-decoration:none;color:black;">Обзор</a>
+            <a href="forms.html" class="nav-link"
+                style="margin-right:12px;text-decoration:none;color:black;">Регистрация</a>
+            <a href="passport.html" class="nav-link"
+                style="margin-right:12px;text-decoration:none;color:black;">Паспорт</a>
+            <a href="task.html" class="nav-link"
+                style="margin-right:12px;text-decoration:none;color:black;"><b>Задача</b></a>
+        </nav>
+
+        <h1>Проверка треугольника по сторонам</h1>
+
+        <p><b>Задача:</b> Даны вещественные числа X, Y, Z. Определить,
+            существует ли треугольник с такими длинами сторон и если да, то
+            является ли он прямоугольным.</p>
+
+        <table>
+            <tr>
+                <td>Сторона X:</td>
+                <td><input type="number" id="sideX" step="0.01"
+                        placeholder="X"></td>
+            </tr>
+            <tr>
+                <td>Сторона Y:</td>
+                <td><input type="number" id="sideY" step="0.01"
+                        placeholder="Y"></td>
+            </tr>
+            <tr>
+                <td>Сторона Z:</td>
+                <td><input type="number" id="sideZ" step="0.01"
+                        placeholder="Z"></td>
+            </tr>
+        </table>
+
+        <button id="checkBtn">Проверить треугольник</button>
+
+        <div id="result"></div>
+
+        <script>
+    document.getElementById('checkBtn').addEventListener('click', () => {
+      const x = parseFloat(document.getElementById('sideX').value);
+      const y = parseFloat(document.getElementById('sideY').value);
+      const z = parseFloat(document.getElementById('sideZ').value);
+      const resultDiv = document.getElementById('result');
+
+      // Проверка, введены ли все числа
+      if (isNaN(x) || isNaN(y) || isNaN(z) || x <= 0 || y <= 0 || z <= 0) {
+        resultDiv.innerText = "Введите корректные положительные числа";
+        return;
+      }
+
+      // Проверка существования треугольника
+      if (x + y > z && x + z > y && y + z > x) {
+        // Проверка на прямоугольный (теорема Пифагора)
+        const sides = [x, y, z].sort((a, b) => a - b); // сортируем по возрастанию
+        const a = sides[0], b = sides[1], c = sides[2]; // c — гипотенуза
+        if (Math.abs(a*a + b*b - c*c) < 1e-10) {
+          resultDiv.innerText = "Существует, прямоугольный";
+        } else {
+          resultDiv.innerText = "Существует";
+        }
+      } else {
+        resultDiv.innerText = "Не существует";
+      }
+    });
+  </script>
+    </body>
+</html>

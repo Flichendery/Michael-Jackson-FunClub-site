@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <title>Галерея — миниатюры и большая картинка</title>
+  </head>
+  <body>
+    <!-- Навигация -->
+    <nav id="main-nav" style="padding:10px;border-bottom:1px solid #ccc;">
+      <img src="Jackson-icon.png" alt="Logo"
+        style="height:30px; margin-right:15px;">
+      <a href="index.html" class="nav-link"
+        style="margin-right:12px;text-decoration:none;color:black;">Главная</a>
+      <a href="info2.html" class="nav-link"
+        style="margin-right:12px;text-decoration:none;color:black;">Инфо</a>
+      <a href="forms.html" class="nav-link"
+        style="margin-right:12px;text-decoration:none;color:black;">Формы</a>
+    </nav>
+
+    <h1>Галерея</h1>
+    <p>Ниже миниатюры; при клике — открывается большое изображение 600×400 в
+      новом окне, центрированном на экране.</p>
+
+    <!-- миниатюра (до 100px по ширине) -->
+    <table>
+      <tr>
+        <td>
+          <a
+            href="javascript:openCenteredImage('https://via.placeholder.com/600x400?text=Большая+картинка',600,400)">
+            <img src="https://via.placeholder.com/100x67?text=Thumb" alt="мини"
+              style="width:100px;height:auto;border:1px solid #999" />
+          </a>
+          <div>Подпись: объект в реальном виде</div>
+        </td>
+        <td>
+          <a
+            href="javascript:openCenteredImage('https://via.placeholder.com/600x400?text=Кадр+2',600,400)">
+            <img src="https://via.placeholder.com/90x60?text=T2" alt="мини2"
+              style="width:90px;height:auto;border:1px solid #999" />
+          </a>
+          <div>Подпись: второй кадр</div>
+        </td>
+      </tr>
+    </table>
+
+    <script>
+    // Открыть центрированное окно с картинкой (ширина и высота заданы)
+    function openCenteredImage(url,w,h){
+      var sw = screen.availWidth || screen.width;
+      var sh = screen.availHeight || screen.height;
+      var left = Math.max(0, Math.round((sw - w)/2));
+      var top  = Math.max(0, Math.round((sh - h)/2));
+      var opts = 'width='+w+',height='+h+',left='+left+',top='+top+',resizable=yes,scrollbars=no';
+      var win = window.open('', '_blank', opts);
+      // Запишем простую страницу с картинкой по центру
+      if(win){
+        win.document.write(
+          '<!doctype html><html><head><meta charset="utf-8"><title>Изображение</title></head>' +
+          '<body style="margin:0;display:flex;align-items:center;justify-content:center;height:100%;background:#111;">' +
+          '<img src="'+url+'" alt="Большое изображение" style="max-width:100%;max-height:100%;box-shadow:0 0 8px #000"/>' +
+          '</body></html>'
+        );
+        win.document.close();
+      } else {
+        // fallback: открыть в текущем окне
+        location.href = url;
+      }
+    }
+  </script>
+  </body>
+</html>

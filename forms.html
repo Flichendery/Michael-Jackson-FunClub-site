@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <title>Регистрация фанатов Майкла Джексона</title>
+    <style>
+      body {
+        font-size:20px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Навигация -->
+    <nav name="main-nav" style="padding:10px;border-bottom:1px solid #ccc;">
+      <img src="Jackson-icon.png" alt="Logo"
+        style="height:30px; margin-right:15px;">
+      <a href="index.html" class="nav-link"
+        style="margin-right:12px;text-decoration:none;color:black;">Главная</a>
+      <a href="info2.html" class="nav-link"
+        style="margin-right:12px;text-decoration:none;color:black;">Обзор</a>
+      <a href="forms.html" class="nav-link"
+        style="margin-right:12px;text-decoration:none;color:black;"><b>Регистрация</b></a>
+      <a href="passport.html" class="nav-link"
+        style="margin-right:12px;text-decoration:none;color:black;">Паспорт</a>
+      <a href="task.html" class="nav-link"
+        style="margin-right:12px;text-decoration:none;color:black;">Задача</a>
+    </nav>
+
+    <h1>Регистрация фанатов Майкла Джексона</h1>
+
+    <h2>1) Контактная форма участника клуба</h2>
+    <!-- Отправка контактных данных -->
+
+    <form
+      action="https://www.google.com"
+      method="post" target="_blank"
+      onsubmit="console.log('Форма отправлена!'); console.log(Object.fromEntries(new FormData(this)));">
+      <label>Фамилия: <input type="text" name="user_surname"
+          placeholder="Джексон" required></label><br><br>
+      <label>Имя: <input type="text" name="user_firstname" placeholder="Майкл"
+          required></label><br><br>
+      <label>Ник участника клуба: <input type="text" name="fan_group"
+          placeholder="MJfan2025" required></label><br><br>
+      <label>Мобильный телефон: <input type="tel" name="user_phone"
+          placeholder="+78005553535" required></label><br><br>
+      <label>Электронная почта: <input type="email" name="user_email"
+          placeholder="mjfan@example.com" required></label><br><br>
+      <label>Дата рождения: <input type="date" name="submission_date" value
+          required></label><br><br>
+      <input type="hidden" name="form_type" value="fan_contact_form_v1">
+      <button type="submit">Отправить контактные данные</button>
+    </form>
+
+    <br>
+    <br>
+
+    <form
+      action="https://www.google.com"
+      method="post" target="_blank"
+      onsubmit="console.log('Форма отправлена!'); console.log(Object.fromEntries(new FormData(this)));">
+      <label>Фамилия: <input type="text" name="user_surname"
+          value="Джексон" required></label><br><br>
+      <label>Имя: <input type="text" name="user_firstname" value="Майкл"
+          required></label><br><br>
+      <label>Ник участника клуба: <input type="text" name="fan_group"
+          value="MJfan2025" required></label><br><br>
+      <label>Мобильный телефон: <input type="tel" name="user_phone"
+          value="+78005553535" required></label><br><br>
+      <label>Электронная почта: <input type="email" name="user_email"
+          value="mjfan@example.com" required></label><br><br>
+      <label>Дата рождения: <input type="date" name="birth_date"
+          value></label><br><br>
+      <input type="hidden" name="form_type" value="fan_contact_form_v1">
+      <button type="submit">Отправить контактные данные</button>
+    </form>
+
+    <hr>
+    <h2>2) Форма регистрации на мероприятие фан-клуба</h2>
+    <!-- Оригинальные данные, тематические -->
+    <form
+      action="https://www.google.com"
+      method="post" target="_blank"
+      onsubmit="console.log('Форма отправлена!'); console.log(Object.fromEntries(new FormData(this)));">
+      <label>Имя : <input type="text" name="fan_name" placeholder="Майкл"
+          required></label><br><br>
+
+      <label>Любимый альбом Майкла Джексона:
+        <select name="favorite_album">
+          <option value="thriller" selected>Thriller</option>
+          <option value="bad">Bad</option>
+          <option value="dangerous">Dangerous</option>
+          <option value="history">HIStory</option>
+          <option value="invincible">Invincible</option>
+        </select>
+      </label><br><br>
+
+      <label>Количество билетов: <input type="number" name="ticket_count"
+          value="1" min="1" required></label><br><br>
+
+      <div>Тип участия:</div>
+      <label><input type="radio" name="participation_type" value="online"
+          checked> Онлайн</label><br>
+      <label><input type="radio" name="participation_type" value="offline">
+        Очное присутствие</label><br><br>
+
+      <div>Дополнительные опции:</div>
+      <label><input type="checkbox" name="vip_access" value="yes">
+        VIP-доступ</label><br>
+      <label><input type="checkbox" name="merch_pack" value="yes" checked> Набор
+        с мерчем</label><br><br>
+
+      <label>Удобные дни посещения (Выбрать 22 октября или 5 ноября) <input
+          type="date" name="event_date" value></label><br><br>
+
+      <label>Код пропуска: <input type="password"
+          name="fan_password"></label><br><br>
+
+      <input type="hidden" name="campaign" value="mj_fan_registration_2025">
+
+      <label>Комментарий (например, любимая песня):<br>
+        <textarea name="fan_comment" rows="4"
+          cols="40">Любимая песня — Billie Jean!</textarea>
+      </label><br><br>
+
+      <button type="submit">Отправить заявку</button>
+    </form>
+  </body>
+</html>
