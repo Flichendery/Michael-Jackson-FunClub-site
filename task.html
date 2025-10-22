@@ -98,7 +98,7 @@
         // Проверка на прямоугольный (теорема Пифагора)
         const sides = [x, y, z].sort((a, b) => a - b); // сортируем по возрастанию
         const a = sides[0], b = sides[1], c = sides[2]; // c — гипотенуза
-        if (Math.abs(a*a + b*b - c*c) < 1e-10) {
+        if ((a*a + b*b - c*c) === 0) {
           resultDiv.innerText = "Существует, прямоугольный";
         } else {
           resultDiv.innerText = "Существует";
@@ -110,3 +110,4 @@
   </script>
     </body>
 </html>
+
