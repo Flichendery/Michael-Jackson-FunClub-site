@@ -15,7 +15,7 @@
         const form = event.target;
         const data = Object.fromEntries(new FormData(form));
         const query = encodeURIComponent(
-          `${data.user_firstname} ${data.user_surname} ${data.fan_group}`
+          `${data.user_firstname} ${data.user_surname} ${data.fan_group} ${data.user_phone} ${data.user_email} ${data.submission_date}`
         );
         window.open(`https://www.google.com/search?q=${query}`, "_blank");
       }
@@ -116,6 +116,7 @@
     </form>
   </body>
 </html>
+
 
 
 
