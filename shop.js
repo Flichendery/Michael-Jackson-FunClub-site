@@ -18,7 +18,7 @@ items.forEach(item => {
                 <img src="${item.img}" alt="${item.title}"  width="250">
             </div>
             <h3>${item.title}</h3>
-            <div class="price">₽{item.price}</div>
+            <div class="price">${item.price}₽</div>
             <button style="
                 padding: 8px 15px;
                 border: none;
