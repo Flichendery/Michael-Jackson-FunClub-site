@@ -15,7 +15,7 @@ items.forEach(item => {
     container.innerHTML += `
         <div class="product-card">
             <div class="img-wrap">
-                <img src="${item.img}" alt="${item.title}">
+                <img src="${item.img} width="250" alt="${item.title}">
             </div>
             <h3>${item.title}</h3>
             <div class="price">$${item.price}</div>
