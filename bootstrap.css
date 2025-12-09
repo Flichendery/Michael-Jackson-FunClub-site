@@ -10,19 +10,6 @@ body {
     margin: 1%;
 }
 
-
-nav {
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
-}
-
-nav a {
-    margin-right: 12px;
-    text-decoration: none;
-    color: black;
-}
-
-
 table {
     border-collapse: collapse;
     margin-top: 20px;
@@ -68,6 +55,20 @@ button {
     object-fit: cover; /* сохраняет пропорции и красиво обрезает */
     border-radius: 6px;
     background-color: #eee; /* на случай если картинка не загрузится */
+}
+
+.img-wrap {
+    width: 100%;
+    height: 250px; /* <-- Квадратный размер */
+    overflow: hidden;       /* Важно: обрезает большие картинки */
+    border-radius: 6px;
+}
+
+.img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;      /* Универсальный ресайз без искажений */
+    display: block;
 }
 
 
