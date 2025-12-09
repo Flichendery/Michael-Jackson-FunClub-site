@@ -14,7 +14,9 @@ const container = document.getElementById("products");
 items.forEach(item => {
     container.innerHTML += `
         <div class="product-card">
-            <img src="${item.img}" alt="${item.title}">
+            <div class="img-wrap">
+                <img src="${item.img}" alt="${item.title}">
+            </div>
             <h3>${item.title}</h3>
             <div class="price">$${item.price}</div>
             <button style="
@@ -29,3 +31,4 @@ items.forEach(item => {
         </div>
     `;
 });
+
