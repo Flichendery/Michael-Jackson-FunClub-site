@@ -1,0 +1,82 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css");
+
+body {
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.image-container img {
+    width: 45%;
+    float: left;
+    margin: 1%;
+}
+
+
+nav {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+nav a {
+    margin-right: 12px;
+    text-decoration: none;
+    color: black;
+}
+
+
+table {
+    border-collapse: collapse;
+    margin-top: 20px;
+    width: 100%;
+}
+
+td,
+th {
+    border: 1px solid #ccc;
+    padding: 10px;
+    vertical-align: top;
+}
+
+button {
+    margin-top: 15px;
+    padding: 8px 12px;
+    font-size: 18px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#result {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* Карточки */
+.product-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 260px;
+    padding: 15px;
+    margin: 15px;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    background-color: #fdfdfd;
+}
+
+.product-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.price {
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+#products {
+    text-align: center;
+}
