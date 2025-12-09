@@ -16,6 +16,18 @@ table {
     width: 100%;
 }
 
+nav {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+nav a {
+    margin-right: 12px;
+    text-decoration: none;
+    color: black;
+}
+
+
 td,
 th {
     border: 1px solid #ccc;
